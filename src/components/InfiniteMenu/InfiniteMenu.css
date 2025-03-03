@@ -1,0 +1,89 @@
+/* Note: this CSS is only an example, you can overlay whatever you want using the
+ * activeItem logic
+ */
+
+#infinite-grid-menu-canvas {
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  outline: none;
+  background: transparent; /* Asegurarnos que el canvas sea transparente */
+  /* Quitamos estos estilos que no funcionaron como esperábamos */
+  /* background: rgba(2, 6, 23, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem; */
+}
+
+#infinite-grid-menu-canvas:active {
+  cursor: grabbing;
+}
+
+.action-button {
+  display: none;
+}
+
+.face-title {
+  user-select: none;
+  position: absolute;
+  font-weight: 900;
+  font-size: 3rem;
+  left: 10%;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: left;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  white-space: pre;
+  line-height: 1.2;
+}
+
+.action-button-icon {
+  user-select: none;
+  position: relative;
+  color: #060606;
+  top: 2px;
+  font-size: 26px;
+}
+
+.face-title.active {
+  opacity: 1;
+  transform: translate(0, -50%);
+  pointer-events: auto;
+  transition: 0.5s ease;
+}
+
+.face-title.inactive {
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-20%, -50%);
+  transition: 0.1s ease;
+}
+
+/* For the title */
+.face-description {
+  display: none;
+}
+
+.action-button {
+  position: absolute;
+  left: 50%;
+}
+
+.action-button.active {
+  bottom: 2em;
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  transition: 0.5s ease;
+}
+
+.action-button.inactive {
+  bottom: -80px;
+  transform: translateX(-50%) scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.1s ease;
+}
