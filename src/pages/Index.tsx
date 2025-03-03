@@ -560,7 +560,7 @@ const Index = () => {
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-wrap gap-6 justify-center md:justify-start w-full md:w-auto">
               {[
                 { name: "Inicio", href: "#inicio" },
                 { name: "Descubrimientos", href: "#descubrimientos" },
